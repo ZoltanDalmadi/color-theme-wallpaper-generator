@@ -4,7 +4,10 @@
 #include <QWidget>
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include <QGraphicsRectItem>
 #include <QPixmap>
+#include <QPainter>
+#include <QDebug>
 
 class Window : public QWidget
 {
@@ -17,7 +20,9 @@ public:
 private:
     QGraphicsScene *gs;
     QGraphicsView *gv;
-    QPixmap pixmap;
+//    QPixmap pixmap;
+protected:
+    virtual void resizeEvent(QResizeEvent *);
 };
 
 #endif // WINDOW_H
