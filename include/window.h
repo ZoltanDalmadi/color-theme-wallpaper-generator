@@ -2,12 +2,18 @@
 #define WINDOW_H
 
 #include <QWidget>
-#include <QGraphicsScene>
-#include <QGraphicsView>
-#include <QGraphicsRectItem>
-#include <QPixmap>
-#include <QPainter>
 #include <QDebug>
+
+#include <QLabel>
+#include <QPushButton>
+#include <QComboBox>
+#include <QSpinBox>
+
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+#include <QGridLayout>
+
+#include "imageview.h"
 
 class Window : public QWidget
 {
@@ -15,14 +21,32 @@ class Window : public QWidget
 
 public:
     Window(QWidget *parent = 0);
-    ~Window();
+    virtual ~Window();
+    virtual QSize sizeHint() const;
 
 private:
     QGraphicsScene *gs;
-    QGraphicsView *gv;
-//    QPixmap pixmap;
-protected:
-    virtual void resizeEvent(QResizeEvent *);
+    ImageView *iv;
+
+    QLabel *colorThemeLabel;
+    QComboBox *colorThemeCB;
+
+    QLabel *shapeLabel;
+    QComboBox *shapeCB;
+
+    QLabel *cellSizeLabel;
+    QSpinBox *cellSizeSB;
+
+    QLabel *cellGapLabel;
+    QSpinBox *cellGapSB;
+
+    QLabel *seedLabel;
+    QSpinBox *seedSB;
+
+    QPushButton *generateButton;
+
+    QGridLayout *gridLayout;
+    QHBoxLayout *hboxLayout;
 };
 
 #endif // WINDOW_H

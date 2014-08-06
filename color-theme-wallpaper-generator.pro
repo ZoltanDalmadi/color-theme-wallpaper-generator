@@ -14,6 +14,8 @@ TEMPLATE = app
 INCLUDEPATH += include
 
 SOURCES += src/main.cpp \
-           src/window.cpp
+           src/window.cpp \
+           src/imageview.cpp
 
-HEADERS  += include/window.h
+HEADERS  += include/window.h \
+            include/imageview.h

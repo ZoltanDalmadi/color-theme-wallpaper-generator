@@ -1,33 +1,58 @@
 #include "window.h"
 
 Window::Window(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+    gs(new QGraphicsScene(this)),
+    iv(new ImageView(gs, this)),
+    colorThemeLabel(new QLabel("Color Theme:", this)),
+    colorThemeCB(new QComboBox(this)),
+    shapeLabel(new QLabel("Shape:", this)),
+    shapeCB(new QComboBox(this)),
+    cellSizeLabel(new QLabel("Cell size:", this)),
+    cellSizeSB(new QSpinBox(this)),
+    cellGapLabel(new QLabel("Cell gap:", this)),
+    cellGapSB(new QSpinBox(this)),
+    seedLabel(new QLabel("Random seed:", this)),
+    seedSB(new QSpinBox(this)),
+    generateButton(new QPushButton("Generate", this)),
+    gridLayout(new QGridLayout()),
+    hboxLayout(new QHBoxLayout())
 {
-    this->setMinimumSize(640, 480);
-    gs = new QGraphicsScene(this);
-    gs->setBackgroundBrush(QBrush(QColor("#282828")));
+    this->setLayout(hboxLayout);
 
-    gs->addRect(0, 0, 320, 240, QPen(Qt::NoPen),
-                QBrush(QColor("#fdf4c1")));
+    hboxLayout->addWidget(iv);
+    hboxLayout->addLayout(gridLayout);
 
-    gv = new QGraphicsView(gs, this);
-    gv->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    gv->setMinimumSize(640, 480);
-    gv->setRenderHints(QPainter::Antialiasing |
-                       QPainter::SmoothPixmapTransform);
-    qDebug() << gs->itemsBoundingRect();
+    gridLayout->setSpacing(20);
+    gridLayout->setContentsMargins(20, 0, 0, 20);
+
+    gridLayout->addWidget(colorThemeLabel, 0, 0);
+    gridLayout->addWidget(colorThemeCB, 0, 1);
+
+    gridLayout->addWidget(shapeLabel, 1, 0);
+    gridLayout->addWidget(shapeCB, 1, 1);
+    shapeCB->addItem("Square");
+    shapeCB->addItem("Circle");
+
+    gridLayout->addWidget(cellSizeLabel, 2, 0);
+    gridLayout->addWidget(cellSizeSB, 2, 1);
+
+    gridLayout->addWidget(cellGapLabel, 3, 0);
+    gridLayout->addWidget(cellGapSB, 3, 1);
+
+    gridLayout->addWidget(seedLabel, 4, 0);
+    gridLayout->addWidget(seedSB, 4, 1);
+
+    gridLayout->addWidget(generateButton, 5, 0, 1, 2);
+
+    gridLayout->setRowStretch(6, 1);
 }
 
 Window::~Window()
 {
-
 }
 
-void Window::resizeEvent(QResizeEvent *)
+QSize Window::sizeHint() const
 {
-    if (gs->sceneRect().width() > gv->width() ||
-      gs->sceneRect().height() > gv->height()) {
-        gv->fitInView(gs->sceneRect(), Qt::KeepAspectRatio);
-
-    }
+    return QSize(640, 480);
 }
