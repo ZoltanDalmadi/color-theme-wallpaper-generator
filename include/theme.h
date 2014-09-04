@@ -1,23 +1,17 @@
 #ifndef THEME_H
 #define THEME_H
 
-#include <QObject>
 #include <QString>
 #include <QList>
 #include <QColor>
 
-class Theme : public QObject
+class Theme
 {
-  Q_OBJECT
 public:
-  Theme(QString themeName, QObject *parent = 0);
+  Theme(QString themeName);
   virtual ~Theme();
 
-  QString name() const;
-  QList<QColor> colors() const;
-
-private:
-  QString _name;
+  QString name;
   QList<QColor> _colors;
 };
 

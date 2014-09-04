@@ -10,6 +10,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = color-theme-wallpaper-generator
 TEMPLATE = app
+CONFIG   += c++11
 
 INCLUDEPATH += include
 
@@ -18,10 +19,10 @@ SOURCES += src/main.cpp \
            src/imageviewer.cpp \
            src/imagegenerator.cpp \
            src/themeparser.cpp \
-    src/theme.cpp
+           src/theme.cpp
 
 HEADERS  += include/window.h \
             include/imageviewer.h \
             include/imagegenerator.h \
             include/themeparser.h \
-    include/theme.h
+            include/theme.h

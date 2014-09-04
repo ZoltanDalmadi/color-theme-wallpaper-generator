@@ -13,7 +13,7 @@ public:
   ThemeParser(QString dirname, QObject *parent = 0);
   virtual ~ThemeParser();
 
-  QDir dir;
+  QString themeDir;
   QList<Theme> themes;
 
 signals:
@@ -21,6 +21,9 @@ signals:
 
 public slots:
   void parseThemes();
+
+private:
+  Q_DISABLE_COPY(ThemeParser)
 
 };
 
