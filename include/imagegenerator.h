@@ -7,11 +7,17 @@ class ImageGenerator : public QObject
 {
   Q_OBJECT
 public:
-  explicit ImageGenerator(QObject *parent = 0);
+  ImageGenerator(QObject *parent = 0);
+  virtual ~ImageGenerator();
 
 signals:
+  void generationComplete();
 
 public slots:
+  void generateImage();
+
+private:
+  QPixmap pixmap;
 
 };
 
