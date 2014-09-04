@@ -1,6 +1,6 @@
-#include "imageview.h"
+#include "imageviewer.h"
 
-ImageView::ImageView(QGraphicsScene *scene, QWidget *parent) :
+ImageViewer::ImageViewer(QGraphicsScene *scene, QWidget *parent) :
     QGraphicsView(scene, parent),
     scene(scene)
 {
@@ -9,16 +9,16 @@ ImageView::ImageView(QGraphicsScene *scene, QWidget *parent) :
                        QPainter::SmoothPixmapTransform);
 }
 
-ImageView::~ImageView()
+ImageViewer::~ImageViewer()
 {
 }
 
-QSize ImageView::sizeHint() const
+QSize ImageViewer::sizeHint() const
 {
     return QSize(320, 240);
 }
 
-void ImageView::resizeEvent(QResizeEvent *e)
+void ImageViewer::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);
     if (scene->sceneRect().width() > this->width() ||

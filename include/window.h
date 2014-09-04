@@ -13,7 +13,7 @@
 #include <QVBoxLayout>
 #include <QGridLayout>
 
-#include "imageview.h"
+#include "imageviewer.h"
 
 class Window : public QWidget
 {
@@ -26,7 +26,7 @@ public:
 
 private:
     QGraphicsScene *gs;
-    ImageView *iv;
+    ImageViewer *iv;
 
     QLabel *colorThemeLabel;
     QComboBox *colorThemeCB;

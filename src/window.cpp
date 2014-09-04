@@ -3,7 +3,7 @@
 Window::Window(QWidget *parent)
     : QWidget(parent),
     gs(new QGraphicsScene(this)),
-    iv(new ImageView(gs, this)),
+    iv(new ImageViewer(gs, this)),
     colorThemeLabel(new QLabel("Color Theme:", this)),
     colorThemeCB(new QComboBox(this)),
     shapeLabel(new QLabel("Shape:", this)),

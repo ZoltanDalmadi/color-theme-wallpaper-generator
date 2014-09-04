@@ -4,12 +4,12 @@
 #include <QGraphicsView>
 #include <QGraphicsScene>
 
-class ImageView : public QGraphicsView
+class ImageViewer : public QGraphicsView
 {
     Q_OBJECT
 public:
-    ImageView(QGraphicsScene *scene, QWidget *parent = 0);
-    virtual ~ImageView();
+    ImageViewer(QGraphicsScene *scene, QWidget *parent = 0);
+    virtual ~ImageViewer();
     virtual QSize sizeHint() const;
 
 protected:
