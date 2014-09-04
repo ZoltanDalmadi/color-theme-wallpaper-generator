@@ -17,36 +17,36 @@
 
 class Window : public QWidget
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    Window(QWidget *parent = 0);
-    virtual ~Window();
-    virtual QSize sizeHint() const;
+  Window(QWidget *parent = 0);
+  virtual ~Window();
+  virtual QSize sizeHint() const;
 
 private:
-    QGraphicsScene *gs;
-    ImageViewer *iv;
+  QGraphicsScene *gs;
+  ImageViewer *iv;
 
-    QLabel *colorThemeLabel;
-    QComboBox *colorThemeCB;
+  QLabel *colorThemeLabel;
+  QComboBox *colorThemeCB;
 
-    QLabel *shapeLabel;
-    QComboBox *shapeCB;
+  QLabel *shapeLabel;
+  QComboBox *shapeCB;
 
-    QLabel *cellSizeLabel;
-    QSpinBox *cellSizeSB;
+  QLabel *cellSizeLabel;
+  QSpinBox *cellSizeSB;
 
-    QLabel *cellGapLabel;
-    QSpinBox *cellGapSB;
+  QLabel *cellGapLabel;
+  QSpinBox *cellGapSB;
 
-    QLabel *seedLabel;
-    QSpinBox *seedSB;
+  QLabel *seedLabel;
+  QSpinBox *seedSB;
 
-    QPushButton *generateButton;
+  QPushButton *generateButton;
 
-    QGridLayout *gridLayout;
-    QHBoxLayout *hboxLayout;
+  QGridLayout *gridLayout;
+  QHBoxLayout *hboxLayout;
 };
 
 #endif // WINDOW_H

@@ -15,7 +15,9 @@ INCLUDEPATH += include
 
 SOURCES += src/main.cpp \
            src/window.cpp \
-           src/imageviewer.cpp
+           src/imageviewer.cpp \
+           src/imagegenerator.cpp
 
 HEADERS  += include/window.h \
-            include/imageviewer.h
+            include/imageviewer.h \
+            include/imagegenerator.h

@@ -6,17 +6,17 @@
 
 class ImageViewer : public QGraphicsView
 {
-    Q_OBJECT
+  Q_OBJECT
 public:
-    ImageViewer(QGraphicsScene *scene, QWidget *parent = 0);
-    virtual ~ImageViewer();
-    virtual QSize sizeHint() const;
+  ImageViewer(QGraphicsScene *scene, QWidget *parent = 0);
+  virtual ~ImageViewer();
+  virtual QSize sizeHint() const;
 
 protected:
-    virtual void resizeEvent(QResizeEvent *e);
+  virtual void resizeEvent(QResizeEvent *e);
 
 private:
-    QGraphicsScene *scene;
+  QGraphicsScene *scene;
 
 };
 
