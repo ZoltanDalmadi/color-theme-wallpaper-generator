@@ -17,9 +17,11 @@ SOURCES += src/main.cpp \
            src/window.cpp \
            src/imageviewer.cpp \
            src/imagegenerator.cpp \
-           src/themeparser.cpp
+           src/themeparser.cpp \
+    src/theme.cpp
 
 HEADERS  += include/window.h \
             include/imageviewer.h \
             include/imagegenerator.h \
-            include/themeparser.h
+            include/themeparser.h \
+    include/theme.h

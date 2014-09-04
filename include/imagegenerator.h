@@ -2,6 +2,7 @@
 #define IMAGEGENERATOR_H
 
 #include <QObject>
+#include <QPixmap>
 
 class ImageGenerator : public QObject
 {

@@ -1,4 +1,4 @@
-#include "include\themeparser.h"
+#include "themeparser.h"
 
 ThemeParser::ThemeParser(QString dirname, QObject *parent) :
   QObject(parent)

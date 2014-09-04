@@ -2,6 +2,9 @@
 #define THEMEPARSER_H
 
 #include <QObject>
+#include <QStringList>
+#include <QList>
+#include "theme.h"
 
 class ThemeParser : public QObject
 {
@@ -11,11 +14,13 @@ public:
   virtual ~ThemeParser();
 
   QDir dir;
-  QStringList themeNames;
-  QList< QList<QColor> > themeColors;
+  QList<Theme> themes;
 
 signals:
   void parsingComplete();
+
+public slots:
+  void parseThemes();
 
 };
 
